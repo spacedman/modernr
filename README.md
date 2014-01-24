@@ -1,4 +1,7 @@
 modernr
 =======
 
-Notes for a workshop in modern R techniques
+This workshop hopes to cover some modern techniques to 
+improve your R programming. 
+
+
