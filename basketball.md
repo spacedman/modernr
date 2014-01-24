@@ -31,6 +31,19 @@ source_gist("8570444")
 That's handy for sharing snippets of self-contained code - but always check the
 code from anyone you don't trust!
 
+We'll do a bit of work with this script so let's download it.
+
+GitHub
+======
+
+[GitHub](http://www.github.com) is a web site for software development. As long as your 
+code is public there is no charge (you can pay for a private repository for your code).
+
+I'm not going to show you any of the features of GitHub except to use it for you to download
+code I've prepared.
+
+Go to my [modernr](https://github.com/spacedman/modernr) page and lower-right you'll see a 
+button to download a ZIP file - download that and extract it.
 
 RStudio
 =======
