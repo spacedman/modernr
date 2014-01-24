@@ -16,3 +16,13 @@ were made available via [Github's](http://www.github.com) system
 of ["Gists"](https://gist.github.com/), a place to post short files
 for public consumption.
 
+The URL for Corey Chivers' code is:
+
+```
+https://gist.github.com/cjbayesian/8570444
+```
+
+In the top right of the code box is a "<>" link which gets the raw
+file. Hit that, and save the resulting file. Call it `basketball.R`.
+
+
