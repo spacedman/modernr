@@ -182,3 +182,9 @@ Exercise
 
 Edit the `latex.Rnw` report file to use the package instead of defining the functions inside itself.
 
+Finished Package
+================
+
+If you get stuck creating the package then get the ZIP archive from the
+`finished`[https://github.com/spacedman/modernr/tree/finished] branch of my github repository.
+
