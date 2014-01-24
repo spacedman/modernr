@@ -22,9 +22,17 @@ The URL for Corey Chivers' code is:
 https://gist.github.com/cjbayesian/8570444
 ```
 
-In the top right of the code box is a "<>" link which gets the raw
-file. Hit that, and save the resulting file. Save it as `buffet_basketball.R` 
-somewhere.
+You can run this directory from R, using `devtools`:
+
+```
+require(devtools)
+par(ask=TRUE)
+source_gist("8570444")
+```
+
+That's handy for sharing snippets of self-contained code - but always check the
+code from anyone you don't trust!
+
 
 RStudio
 =======
