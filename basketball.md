@@ -117,3 +117,68 @@ see a neat PDF version of the report come up.
 
 Since you can include any LaTeX in this file, you have all the power of LaTeX and
 all the power of R in one file.
+
+Writing Packages
+================
+
+These report scripts are all well and good, but the functions are stuck in the files. If
+I want to use the files elsewhere, I have to copy them out. Copying code is a bad thing, because
+since all code has bugs in it, you are creating more bugs.
+
+The R way of keeping one copy of the code is to create packages. The `devtools` package
+makes this very easy.
+
+```
+require(devtools)
+create("bbet")
+```
+
+This creates a template new package in a folder called `bbet`. Use RStudio to
+open the DESCRIPTION file in that folder, and give your package a short title
+and description. Make sure the "Authors" field is filled in too. Something like:
+
+```
+Package: bbet
+Title: Buffett Betting
+Description: Code for the Warren Buffett Basketball Betting
+Version: 0.1
+Authors@R: "Barry Rowlingson <b.rowlingson@gmail.com> [aut, cre]"
+Depends: R (>= 3.0.2)
+License: Private
+LazyData: true
+```
+
+This identifies me as the author and creator. I can now load the package
+using devtools' handy functions.
+
+```
+load_all("./bbet")
+```
+
+Note this function wants the path to the package folder created previously. 
+
+The package doesn't have any functions in it at the moment so that doesn't do much. Open
+a new file in RStudio and copy and paste the two function definitions from the `latex.Rnw` file.
+Don't copy the Sweave markers, just the functions. 
+
+Now, DONT `source` this file. Save it in the `./bbet/R/` folder and call it something like `odds.R`.
+
+Check your workspace - either type `ls()` in the console or use the
+`Workspace` tab. If there's functions called `expected_value` and
+`winner_odds` then delete them - in RStudio just hit the brush button
+in the `Workspace` menu bar and delete everything in the workspace.
+
+Now do `load_all("./bbet")` again. Type `expected_value` and you should now see your function. But
+its not in the `Workspace` - its in your package which is attached and loaded by `devtools`.
+
+This is a Good Thing, because it means all the functions you might have created in a script
+are no longer having to be read into your current workspace, cluttering it up. You have 
+one definitive copy of the function which you load into any project you want to use it in.
+
+Further tools can let you document your functions.
+
+Exercise
+========
+
+Edit the `latex.Rnw` report file to use the package instead of defining the functions inside itself.
+
