@@ -1,15 +1,18 @@
-## Warren Buffet's 1B Basketball Challenge ##
+#' Warren Buffet's 1B Basketball Challenge 
 
 expected_value <- function(p,ngames=63,prize=1000000000){
     p^ngames * prize
 }
 
-## What is the expected value of an entry 
-## given a particular level of prediction accuracy
+#' What is the expected value of an entry 
+#' given a particular level of prediction accuracy
 expected_value(p=0.80)
 expected_value(p=0.85)
 
-## Plotted ##
+#' We can now plot the expected value of an entry depending
+#' on how good our predictions might be
+
+#+ echo=FALSE
 par(lwd=3,cex=1.3)
 curve(expected_value(x),
     xlim=c(0.5,0.75),
@@ -23,7 +26,8 @@ curve(expected_value(x),
 
 
 
-## Odds that the prize will be awared
+#' Odds that the prize will be awared
+#+ echo=TRUE
 winner_odds <- function(x,p=0.85){
     1-(1-(p)^63)^x
 }

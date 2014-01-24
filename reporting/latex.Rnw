@@ -2,18 +2,20 @@
 
 \title{Warren Buffet's 1B Basketball Challenge}
 
+<<startup, echo=FALSE, output=FALSE>>=
+expected_value <- function(p,ngames=63,prize=1000000000){
+    p^ngames * prize
+}
+winner_odds <- function(x,p=0.85){
+    1-(1-(p)^63)^x
+}
+
+@
 \begin{document}
 
 \maketitle
 
 \section{Expected Value}
-
-First we need functions from our basketball package.
-
-<<output=FALSE>>=
-require(devtools)
-load_all("../basketball")
-@
 
 What is the expected value of an entry 
 given a particular level of prediction accuracy?

@@ -48,7 +48,7 @@ button to download a ZIP file - download that and extract it.
 RStudio
 =======
 
-Start RStudio and use the `File` menu to load the code. 
+Start RStudio and use the `File` menu to load the `script.R` file from the extracted ZIP archive.
 
 Now the way a lot of people work is to write a long script like this, and then
 use `source` to load it. You can just hit the `Source` button to do that.
@@ -56,27 +56,46 @@ use `source` to load it. You can just hit the `Source` button to do that.
 That should run the code, it will scroll up the Console window, and some plots will 
 flash in the Plots window. Use the arrows to see the previous plots.
 
-Spinning a Report
-=================
+Stitching and Spinning
+======================
 
 At the top right of the file pane is an icon that says "Compile an
-HTML notebook...".  Hit the button, add a title and an author name,
-and set the Notebook type to `knitr::spin` and hit "Compile".
+HTML notebook...".  Hit the button, add a title  and hit "Compile".
 
-The "spin" function can take any R script, and turn it into a document.
-It can also use specially formatted comments to add plain text to the output.
+You should see a nicely formatted web document appear. The 
+script has been "stitched" with the `stitch` function and converted to 
+an HTML file which can be viewed with plots in-line with the code.
 
-Change some of the "##" comments into "#'", and expand on the text a little:
+The "stitch" function can take any R script, and turn it into a
+document. A similar process, "spin", can improve the formatting
+slightly by using specially formatted comments to add plain text to
+the output or modify the code shown.
+
+Change some of the "##" comments into "#'" - this will format them as plain
+text in the report, but not affect the ability to `source` the file.  Change the 
+first line to this:
 
 ```
-#' What is the expected value of an entry 
-#' given a particular level of prediction accuracy?
-expected_value(p=0.80)
-expected_value(p=0.85)
+#' Warren Buffet's 1B Basketball Challenge 
 ```
 
-Now re-compile the report. You should see that the text is now outside the code blocks, and without
-comment signs.
+Change the section a bit further on to expand the text and set the `echo` option with 
+a `#+` comment.
+
+```
+#' We can now plot the expected value of an entry depending
+#' on how good our predictions might be
+
+#+ echo=FALSE
+par(lwd=3,cex=1.3)
+curve(expected_value(x),
+```
+
+Now re-compile the report, but select `knitr::spin` from the `Notebook Type` option. You should see that the text is now outside the code blocks, and without comment signs, and that the code that creates
+the plots is missing.
+
+With this technique you can create a single script file that does the analysis and presents
+the results and hides all the code.
 
 More Complex Report Writing
 ===========================
@@ -84,3 +103,4 @@ More Complex Report Writing
 The "spin" process described above is good for quick reports but for more detailed work you need
 something else.
 
+Open the `latex.Rnw` file from the archive. 
