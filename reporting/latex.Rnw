@@ -2,19 +2,20 @@
 
 \title{Warren Buffet's 1B Basketball Challenge}
 
+<<startup, echo=FALSE, output=FALSE>>=
+expected_value <- function(p,ngames=63,prize=1000000000){
+    p^ngames * prize
+}
+winner_odds <- function(x,p=0.85){
+    1-(1-(p)^63)^x
+}
+
+@
 \begin{document}
 
 \maketitle
 
 \section{Expected Value}
-
-First we define the expected value function
-
-<<>>=
-expected_value <- function(p,ngames=63,prize=1000000000){
-    p^ngames * prize
-}
-@
 
 What is the expected value of an entry 
 given a particular level of prediction accuracy?
@@ -39,13 +40,6 @@ curve(expected_value(x),
     xlab="Probability of correctly predicting a single game")
 @
 
-Odds that the prize will be awared
-
-<<>>=
-winner_odds <- function(x,p=0.85){
-    1-(1-(p)^63)^x
-}
-@
 
 A million entries each with 80\% accuracy
 
