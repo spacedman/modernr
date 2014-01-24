@@ -103,4 +103,17 @@ More Complex Report Writing
 The "spin" process described above is good for quick reports but for more detailed work you need
 something else.
 
-Open the `latex.Rnw` file from the archive. 
+Open the `latex.Rnw` file from the archive. This is a `R-NoWeb` file and consists of
+"chunks" of R code mixed with chunk of, in this case, LaTeX code.
+
+Each chunk of code starts with a chunk marker `<<>>==`, with some
+possible options, and ends with an `@` marker.
+
+You need to set your Sweave options to use `knitr` - goto Tools, select Options, 
+the Sweave section, and set "Weave Rnw files using" to  "knitr". Okay.
+
+Now hit the `Compile PDF` button on the file menu, and if LaTeX is setup you should
+see a neat PDF version of the report come up.
+
+Since you can include any LaTeX in this file, you have all the power of LaTeX and
+all the power of R in one file.
