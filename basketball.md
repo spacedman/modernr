@@ -20,7 +20,7 @@ The URL for Corey Chivers' code is:
 
 [https://gist.github.com/cjbayesian/8570444](https://gist.github.com/cjbayesian/8570444)
 
-You can run this directory from R, using `devtools`:
+You can run this directly from R, using `devtools`:
 
 ```
 require(devtools)
