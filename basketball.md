@@ -42,7 +42,7 @@ code is public there is no charge (you can pay for a private repository for your
 I'm not going to show you any of the features of GitHub except to use it for you to download
 code I've prepared.
 
-Go to my [modernr](https://github.com/spacedman/modernr) page and lower-right you'll see a 
+Go to my [modernr (https://github.com/spacedman/modernr)](https://github.com/spacedman/modernr) page and lower-right you'll see a 
 button to download a ZIP file - download that and extract it.
 
 RStudio
