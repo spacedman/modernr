@@ -5,7 +5,7 @@ Billionaire investor Warren Buffett is backing a $1B prize to
 anyone who can predict the winners of all 63 "March Madness"
 basketball games.
 
-Corey Chivers on the "Bayesian Biologist" blog did a few simple probability
+Corey Chivers on the "Bayesian Biologist" ([http://bayesianbiologist.com/](http://bayesianbiologist.com/)) blog did a few simple probability
 calculations and decided Buffett's money was [pretty safe](http://bayesianbiologist.com/2014/01/22/whats-warren-buffetts-1-billion-basketball-bet-worth/).
 
 Code
